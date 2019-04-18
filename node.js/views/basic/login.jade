@@ -1,0 +1,17 @@
+extends ../layout
+
+block content
+  form(method="POST", action="/")
+    h3 Entrar no Sistema
+    
+    if messages.erro
+      br
+      div(class="alert alert-danger")
+        each msg in messages.erro
+          b= msg
+          br
+    
+    input(type="login" placeholder="login" name="login" required)
+    input(type="password" placeholder="senha" name="password" required)
+    button(type="submit") Entrar
+    a(href="/users/create") Cadastrar Usuário

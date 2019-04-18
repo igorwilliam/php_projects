@@ -1,0 +1,33 @@
+extends ../layout
+
+block content
+  h1 Projetos
+  a(href="/projects/create") Cadastrar Projeto
+  
+  br
+  
+  if messages.error
+    div(class="alert alert-danger")
+      p #{messages.erro}
+  if messages.info
+    div(class="alert alert-success")
+      p #{messages.info}
+      
+  if list.length > 0
+    table
+      tr
+        th NOME
+        th DESCRIÇÃO
+        th CUSTO
+        th DURAÇÃO
+      each field in list
+        tr
+          td #{field.name}
+          td #{field.description}
+          td #{field.price}
+          td #{field.duration}
+          td 
+            a(href="/holders/create/#{field._id}") Apoiar
+  else
+    br
+    p Nenhum Projeto Cadastrado

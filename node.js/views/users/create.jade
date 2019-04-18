@@ -1,0 +1,15 @@
+extends ../layout
+
+block content
+  h1 Cadastro de Usuário
+  hr
+  if messages.erro
+    div(class="alert alert-danger")
+      each msg in messages.erro
+        b= msg
+        br
+  form(method="POST" action="")
+    input(type="text" placeholder="Login" name="login" value="#{user.login || ''}" autofocus required)
+    input(type="text" placeholder="Primeiro Nome" name="name" value="#{user.name || ''}" required)
+    input(type="password" placeholder="Senha" name="password" required)
+    button(type="submit") Cadastrar

@@ -1,0 +1,11 @@
+extends ../layout
+
+block content
+  h1 Cadastro de Projeto
+  hr
+  form(method="POST" action="/projects/create")
+    input(type="text" placeholder="Nome do Projeto" name="name" autofocus required)
+    input(type="text" placeholder="Descrição" name="description")
+    input(type="text" placeholder="Custo" name="price" required)
+    input(type="text" placeholder="Tempo pra desenvolvimento" name="duration" required)
+    button(type="submit") Cadastrar

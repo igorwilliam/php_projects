@@ -1,0 +1,9 @@
+extends ../layout
+
+block content
+  h1 Apoio de Projeto
+  hr
+  form(method="POST" action="/holders/create/#{id}")
+    input(type="text" placeholder="Seu nome" name="projects[userHolder]" autofocus required)
+    input(type="text" placeholder="valor" name="projects[value]")
+    button(type="submit") Cadastrar

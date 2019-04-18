@@ -1,0 +1,30 @@
+extends ../layout
+
+block content
+  h1 Usuários
+  a(href="/users/create") Cadastrar
+  
+  br
+  
+  if messages.error
+    div(class="alert alert-danger")
+      p #{messages.erro}
+  if messages.info
+    div(class="alert alert-success")
+      p #{messages.info}
+      
+  if list.length > 0
+    table
+      tr
+        th ID
+        th LOGIN
+        th NOME
+      each field in list
+        tr
+          td #{field._id}
+          td #{field.login}
+          td #{field.name}
+          td #{field.password}
+  else
+    br
+    p Nenhum Usuário Cadastrado

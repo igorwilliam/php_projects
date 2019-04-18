@@ -1,0 +1,27 @@
+extends ../layout
+
+block content
+  h1 Apoiadores
+  a(href="/users/create") Apoie esse Projeto
+  
+  br
+  
+  if messages.error
+    div(class="alert alert-danger")
+      p #{messages.erro}
+  if messages.info
+    div(class="alert alert-success")
+      p #{messages.info}
+      
+  if list.length > 0
+    table
+      tr
+        th NOME
+        th VALOR
+      each field in list
+        tr
+          td #{field.userHolder}
+          td #{field.value}
+  else
+    br
+    p Nenhum Apoio
