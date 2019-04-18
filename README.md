@@ -1,6 +1,6 @@
 # Web Projects
 
-Projects construidos durante a graduação para a disciplina de programaçao web.
+Projects built during graduation for the discipline of web programming.
 
 1. laravel
 2. Node.js
